@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 Edit Records
+        form(method='POST' action='/editDetails')
+          each vr in result
+            div.form-group
+                label(for='name') Name
+                input.form-control(type='text' id='name' value=vr.name placeholder='Name' name='name')
+            div.form-group
+                label(for='email') Email
+                input.form-control(type='text' id='email' value=vr.email placeholder='email' name='email')
+            div.form-group
+                label(for='phone') Phone
+                input.form-control(type='text' id='phone' value=vr.phone placeholder='Phone' name='phone')
+            div.form-group
+                input.form-control(type='hidden' value=vr._id  name='id')    
+          button.btn.btn-primary.col-md-6(type='submit') Update
+          

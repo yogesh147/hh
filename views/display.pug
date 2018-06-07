@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    table.table.table-hover
+        tr
+            th Name
+            th Email
+            th Phone
+            th 
+            th
+
+        
+        each vr in result
+            tr
+                td    
+                    p=vr.name
+                td
+                    p=vr.email
+                td
+                    p=vr.phone
+                td
+                    a(href="/edit?id="+vr._id)
+                        span.glyphicon.glyphicon-pencil
+                td
+                    a(href="/delete?id="+vr._id)
+                        span.glyphicon.glyphicon-trash                
+    a(href="/addRecord")
+          button.btn.btn-primary.col-md-12(type='button') Add Record                    
